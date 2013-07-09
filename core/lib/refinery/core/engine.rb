@@ -1,5 +1,3 @@
-require 'decorators'
-
 module Refinery
   module Core
     class Engine < ::Rails::Engine
@@ -69,7 +67,7 @@ module Refinery
 
       initializer "refinery.routes", :after => :set_routes_reloader_hook do |app|
         Refinery::Core::Engine.routes.append do
-          get '/refinery/*path' => 'admin/base#error_404'
+          get "#{Refinery::Core.backend_route}/*path" => 'admin#error_404'
         end
       end
 

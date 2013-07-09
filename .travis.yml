@@ -3,8 +3,7 @@ before_install:
   - gem install bundler
   - 'if [[ "$TRAVIS_RUBY_VERSION" =~ "jruby" ]] ; then gem update --system ; fi'
   - gem install bundler
-install:
-  - bundle install --without development
+bundler_args: --without development
 before_script:
   - "sh -e /etc/init.d/xvfb start"
   - "bundle exec rake refinery:testing:dummy_app > /dev/null"
@@ -27,7 +26,6 @@ env:
   - DB=mysql
 matrix:
   allow_failures:
-    - rvm: jruby-19mode
     - rvm: rbx-19mode
 rvm:
   - 2.0.0
