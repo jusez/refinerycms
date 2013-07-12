@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gemspec
 
 # Add i18n support.
-gem 'refinerycms-i18n', '~> 2.1.0.dev', github: 'refinery/refinerycms-i18n'
+gem 'refinerycms-i18n', '~> 2.1.0', github: 'refinery/refinerycms-i18n'
 
 gem 'protected_attributes'
 gem 'seo_meta', github: 'parndt/seo_meta', branch: 'master'
