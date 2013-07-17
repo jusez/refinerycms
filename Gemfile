@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gemspec
 
-# Add i18n support.
-gem 'refinerycms-i18n', '~> 2.1.0', github: 'refinery/refinerycms-i18n'
-
 gem 'protected_attributes'
 gem 'seo_meta', github: 'parndt/seo_meta', branch: 'master'
 
@@ -19,7 +16,7 @@ gem 'rails-observers'
 gem 'actionpack-page_caching'
 
 # Add support for refinerycms-acts-as-indexed
-gem 'refinerycms-acts-as-indexed', github: 'refinery/refinerycms-acts-as-indexed'
+gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
 
 gem 'quiet_assets', group: :development
 
@@ -43,42 +40,8 @@ end
 gem 'jruby-openssl', platform: :jruby
 
 group :test do
-  gem 'refinerycms-testing', '~> 2.1.0.dev'
+  gem 'refinerycms-testing', '~> 2.1.0'
   gem 'generator_spec', '~> 0.9'
-
-  platforms :mswin, :mingw do
-    gem 'win32console', '~> 1.3.0'
-    gem 'rb-fchange', '~> 0.0.5'
-    gem 'rb-notifu', '~> 0.0.4'
-  end
-
-  platforms :ruby do
-    unless ENV['TRAVIS']
-      require 'rbconfig'
-      if /darwin/i === RbConfig::CONFIG['target_os']
-        gem 'rb-fsevent', '~> 0.9.0'
-        gem 'ruby_gntp', '~> 0.3.4'
-      end
-      if /linux/i === RbConfig::CONFIG['target_os']
-        gem 'rb-inotify', '~> 0.8.8'
-        gem 'libnotify',  '~> 0.7.2'
-        gem 'therubyracer', '~> 0.10.0'
-      end
-    end
-  end
-
-  platforms :jruby do
-    unless ENV['TRAVIS']
-      require 'rbconfig'
-      if /darwin/i === RbConfig::CONFIG['target_os']
-        gem 'ruby_gntp', '~> 0.3.4'
-      end
-      if /linux/i === RbConfig::CONFIG['target_os']
-        gem 'rb-inotify', '~> 0.8.8'
-        gem 'libnotify',  '~> 0.7.2'
-      end
-    end
-  end
 end
 
 # Gems used only for assets and not required
@@ -88,8 +51,6 @@ group :assets do
   gem 'coffee-rails', '4.0.0'
   gem 'uglifier', '>= 1.0.3', require: false
 end
-
-gem 'jquery-rails', '~> 2.0.0'
 
 # To use debugger
 # gem 'ruby-debug', platform: :mri_18
