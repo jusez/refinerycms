@@ -44,14 +44,6 @@ group :test do
   gem 'generator_spec', '~> 0.9'
 end
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails', '4.0.0'
-  gem 'coffee-rails', '4.0.0'
-  gem 'uglifier', '>= 1.0.3', require: false
-end
-
 # To use debugger
 # gem 'ruby-debug', platform: :mri_18
 # or in 1.9.x:
