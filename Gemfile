@@ -48,3 +48,8 @@ end
 if File.exist? local_gemfile = File.expand_path('../.gemfile', __FILE__)
   eval File.read(local_gemfile)
 end
+
+gem 'actionmailer', '~> 3.2.14.rc2'
+gem 'activerecord', '~> 3.2.14.rc2'
+gem 'railties', '~> 3.2.14.rc2'
+gem 'actionpack', '~> 3.2.14.rc2'
